@@ -24,6 +24,7 @@ Stream
    map
    map_async
    partition
+   profile_batch
    rate_limit
    scatter
    sink
@@ -91,6 +92,7 @@ Definitions
 .. autofunction:: flatten
 .. autofunction:: map
 .. autofunction:: partition
+.. autofunction:: profile_batch
 .. autofunction:: rate_limit
 .. autofunction:: sink
 .. autofunction:: sink_to_textfile
@@ -113,3 +115,32 @@ Definitions
 
 .. autofunction:: DaskStream
 .. autofunction:: gather
+
+
+Profile batching
+----------------
+
+.. currentmodule:: streamz
+
+Planning and executing cost-optimal batches of third-party profile calls.
+Requirements are grouped by credential/snapshot context, combined into the
+cheapest feasible API calls, reconstructed per original requirement, and
+re-fetched only for the pairs that failed.
+
+.. autosummary::
+   ProfileRequest
+   CallSpec
+   Pricing
+   BatchPlan
+   BatchResult
+   plan_calls
+   plan_requests
+   MISSING
+
+.. autofunction:: ProfileRequest
+.. autoclass:: CallSpec
+.. autoclass:: Pricing
+.. autoclass:: BatchPlan
+.. autoclass:: BatchResult
+.. autofunction:: plan_calls
+.. autofunction:: plan_requests
